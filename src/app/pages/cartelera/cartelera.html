@@ -1,0 +1,27 @@
+<section>
+    <h2>Cartelera Completa</h2>
+
+    <div class="buscador">
+        <input type="text" placeholder="Buscar por título o género (ej: Acción, Drama)..."
+            (input)="actualizarBusqueda($event)">
+    </div>
+
+    <div class="peliculas-grid">
+        @for (pelicula of peliculasFiltradas(); track pelicula.id) {
+        <article class="pelicula-card">
+            <img [src]="pelicula.imagen" [alt]="pelicula.titulo">
+            <div class="pelicula-info">
+                <h3>{{ pelicula.titulo }}</h3>
+                <p><strong>Géneros:</strong> {{ pelicula.generos.join(', ') }}</p>
+                <p><strong>Formato:</strong> {{ pelicula.formato.join(', ') }}</p>
+                <button [routerLink]="['/pelicula', pelicula.id]">Ver Funciones</button>
+            </div>
+        </article>
+        } @empty {
+        <!-- Feedback automático si el computed devuelve un array vacío -->
+        <div class="sin-resultados">
+            <p>No se encontraron películas para "{{ terminoBusqueda() }}".</p>
+        </div>
+        }
+    </div>
+</section>
