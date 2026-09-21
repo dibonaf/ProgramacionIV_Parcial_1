@@ -1,0 +1,53 @@
+<div class="seleccion-container">
+    <h2>Seleccioná tu función</h2>
+
+    <!-- 1. Días -->
+    <section>
+        <h3>1. Fecha</h3>
+        <div class="botones-grid">
+            @for (dia of diasDisponibles(); track dia) {
+            <button (click)="seleccionarDia(dia)" [class.activo]="diaElegido() === dia">
+                {{ dia }}
+            </button>
+            }
+        </div>
+    </section>
+
+    <!-- 2. Horarios -->
+    <section>
+        <h3>2. Horario</h3>
+        <div class="botones-grid">
+            @for (hora of horariosDisponibles(); track hora) {
+            <button (click)="seleccionarHora(hora)" [class.activo]="horaElegida() === hora">
+                {{ hora }}
+            </button>
+            }
+        </div>
+    </section>
+
+    <!-- 3. Formatos -->
+    <section>
+        <h3>3. Formato</h3>
+        <div class="botones-grid">
+            @for (formato of formatosDisponibles(); track formato) {
+            <button (click)="seleccionarFormato(formato)" [class.activo]="formatoElegido() === formato">
+                {{ formato }}
+            </button>
+            }
+        </div>
+    </section>
+
+    <!-- 4. Idiomas -->
+    <section>
+        <h3>4. Idioma</h3>
+        <div class="botones-grid">
+            @for (idioma of idiomasDisponibles(); track idioma) {
+            <button (click)="seleccionarIdioma(idioma)" [class.activo]="idiomaElegido() === idioma">
+                {{ idioma }}
+            </button>
+            }
+        </div>
+    </section>
+
+    <button class="btn-siguiente" (click)="continuarAButacas()">Seleccionar Butacas</button>
+</div>

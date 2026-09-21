@@ -23,7 +23,7 @@ export class Cartelera {
 
     return todas.filter(p =>
       p.titulo.toLowerCase().includes(termino) ||
-      p.generos.some(g => g.toLowerCase().includes(termino))
+      p.generos.some((g: string) => g.toLowerCase().includes(termino))
     );
   });
 

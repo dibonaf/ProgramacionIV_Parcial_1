@@ -1,0 +1,29 @@
+<section class="candy-container">
+    <h2>Agregá Snacks a tu Compra</h2>
+
+    <div class="productos-grid">
+        @for (prod of productos; track prod.id) {
+        <article class="producto-card">
+            <div class="imagen-placeholder">Imagen {{ prod.nombre }}</div>
+
+            <div class="producto-info">
+                <h3>{{ prod.nombre }}</h3>
+                <p class="desc">{{ prod.descripcion }}</p>
+                <p class="precio">${{ prod.precio }}</p>
+
+                <div class="controles-cantidad">
+                    <button (click)="restarDelCarrito(prod)" [disabled]="obtenerCantidad(prod.id) === 0">-</button>
+                    <span>{{ obtenerCantidad(prod.id) }}</span>
+                    <button (click)="agregarAlCarrito(prod)">+</button>
+                </div>
+            </div>
+        </article>
+        }
+    </div>
+
+    <div class="resumen-final">
+        <h3>Subtotal Candy: ${{ totalCandy() }}</h3>
+        <!-- El routerLink final llevará a la pantalla de confirmación/pago -->
+        <button class="btn-pagar" (click)="irAlPago()">Ir a Pagar</button>
+    </div>
+</section>

@@ -1,0 +1,122 @@
+.sala-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pantalla-cine {
+    background: linear-gradient(to bottom, #ddd, #f9f9f9);
+    border: 1px solid #ccc;
+    border-radius: 50% 50% 0 0 / 20px 20px 0 0;
+    padding: 10px;
+    margin: 30px auto 50px;
+    width: 80%;
+    font-weight: bold;
+    color: #666;
+    box-shadow: 0 10px 15px -10px rgba(0, 0, 0, 0.5);
+}
+
+.grilla-asientos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fila {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.letra-fila {
+    font-weight: bold;
+    width: 20px;
+    color: #555;
+}
+
+.bloque-asientos {
+    display: flex;
+    gap: 4px;
+}
+
+.bloque-izq {
+    width: 92px;
+    min-width: 92px;
+    justify-content: flex-start;
+}
+
+.bloque-centro {
+    width: 476px;
+    min-width: 476px;
+    justify-content: center;
+}
+
+.bloque-der {
+    width: 92px;
+    min-width: 92px;
+    justify-content: flex-end;
+}
+
+.pasillo {
+    width: 40px;
+}
+
+.butaca-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px 4px 10px 10px;
+    border: 1px solid #ccc;
+    background-color: #007bff;
+    color: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 10px;
+    padding: 0;
+}
+
+.butaca-btn:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.butaca-btn.vip {
+    background-color: #ffc107;
+    border-color: #d39e00;
+}
+
+.butaca-btn.accesible {
+    background-color: #28a745;
+    border-color: #1e7e34;
+}
+
+.butaca-btn.seleccionada {
+    background-color: #333 !important;
+    border-color: #000 !important;
+    color: white;
+    transform: scale(1.15);
+    /* Efecto visual de resaltado */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.navegacion-superior {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.btn-atras {
+    background-color: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-atras:hover {
+    background-color: #007bff;
+    color: white;
+}

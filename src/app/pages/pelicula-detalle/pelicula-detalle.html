@@ -1,1 +1,36 @@
-<p>pelicula-detalle works!</p>
+<section class="detalle-container">
+    @if (pelicula()) {
+    <div class="poster-columna">
+        <img [src]="pelicula()?.imagen" [alt]="pelicula()?.titulo">
+    </div>
+
+    <div class="info-columna">
+        <h2>{{ pelicula()?.titulo }}</h2>
+
+        <!-- Requisito de advertencia +18 -->
+        @if (pelicula()?.clasificacion === '+18') {
+        <div class="alerta-edad">
+            ⚠️ <strong>Atención:</strong> Contenido exclusivo para mayores de 18 años.
+        </div>
+        }
+
+        <p class="sinopsis">{{ pelicula()?.sinopsis }}</p>
+
+        <ul>
+            <li><strong>Duración:</strong> {{ pelicula()?.duracion }} minutos</li>
+            <li><strong>Formato:</strong> {{ pelicula()?.formato?.join(', ') }}</li>
+            <li><strong>Idioma:</strong> {{ pelicula()?.idioma }}</li>
+            <li><strong>Géneros:</strong> {{ pelicula()?.generos?.join(', ') }}</li>
+            <li><strong>Clasificación:</strong> {{ pelicula()?.clasificacion }}</li>
+        </ul>
+
+        <!-- Botón que viaja a la ruta de compra enviando el ID -->
+        <button class="btn-comprar" [routerLink]="['/funcion', pelicula()?.id]">Comprar Entradas</button>
+    </div>
+    } @else {
+    <div class="error-mensaje">
+        <p>La película que buscás no existe o ya no está en cartelera.</p>
+        <button routerLink="/cartelera">Volver a la cartelera</button>
+    </div>
+    }
+</section>

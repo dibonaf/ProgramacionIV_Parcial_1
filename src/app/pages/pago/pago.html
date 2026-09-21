@@ -1,0 +1,43 @@
+<section class="pago-container">
+    <h2>¡Resumen y Confirmación de Compra!</h2>
+
+    <div class="ticket-card">
+        <div class="ticket-header">
+            <h3>Cine UTN - Ticket Electrónico</h3>
+        </div>
+
+        <div class="ticket-section">
+            <h4>Asientos Reservados:</h4>
+            @if (butacas().length > 0) {
+            <ul>
+                @for (b of butacas(); track b.id) {
+                <li>Fila {{ b.fila }} - Asiento {{ b.numero }} ({{ b.tipo }})</li>
+                }
+            </ul>
+            } @else {
+            <p>No se seleccionaron butacas.</p>
+            }
+        </div>
+
+        <div class="ticket-section">
+            <h4>Snacks (Candy Bar):</h4>
+            @if (candy().length > 0) {
+            <ul>
+                @for (item of candy(); track item.producto.id) {
+                <li>{{ item.cantidad }}x {{ item.producto.nombre }} - ${{ item.producto.precio * item.cantidad }}</li>
+                }
+            </ul>
+            } @else {
+            <p>No se agregaron snacks.</p>
+            }
+        </div>
+
+        <div class="ticket-total">
+            <h3>Total Abonado: ${{ totalFinal() }}</h3>
+        </div>
+    </div>
+
+    <div class="acciones-finales">
+        <button class="btn-home" routerLink="/">Finalizar / Volver al Inicio</button>
+    </div>
+</section>

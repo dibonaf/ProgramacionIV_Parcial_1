@@ -1,0 +1,78 @@
+.funcion-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.funcion-container h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.opciones-grupo {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.opciones-grupo h3 {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 18px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.botones-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.botones-grid button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    background-color: transparent;
+    color: #007bff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    flex: 1 1 calc(25% - 15px);
+    min-width: 120px;
+}
+
+.botones-grid button:hover {
+    background-color: #e6f2ff;
+}
+
+/* Estilo para la opción que el usuario tocó */
+.botones-grid button.activo {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-continuar {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.2s;
+}
+
+.btn-continuar:hover {
+    background-color: #218838;
+}

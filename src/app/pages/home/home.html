@@ -7,8 +7,8 @@
             <img [src]="pelicula.imagen" [alt]="pelicula.titulo">
             <div class="pelicula-info">
                 <h3>{{ pelicula.titulo }}</h3>
-                <p><strong>Formato:</strong> {{ pelicula.formato.join(', ') }}</p>
-                <p><strong>Idioma:</strong> {{ pelicula.idioma }}</p>
+                <p><strong>Generos:</strong> {{ pelicula.generos.join(', ') }}</p>
+                <p><strong>Clasificación:</strong> {{ pelicula.clasificacion }}</p>
                 <button [routerLink]="['/pelicula', pelicula.id]">Ver Funciones</button>
             </div>
         </article>

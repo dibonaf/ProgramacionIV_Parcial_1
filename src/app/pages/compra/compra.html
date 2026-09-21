@@ -1,1 +1,72 @@
-<p>compra works!</p>
+<section class="sala-container">
+
+    <!-- Botón de regreso -->
+    <div class="navegacion-superior">
+        <button class="btn-atras" (click)="volverAtras()">⬅ Volver a la película</button>
+    </div>
+
+    <h2>Seleccioná tus butacas</h2>
+
+    <div class="pantalla-cine">PANTALLA</div>
+
+    <div class="grilla-asientos">
+        @for (fila of filasDeButacas(); track fila.letra) {
+        <div class="fila">
+            <span class="letra-fila">{{ fila.letra }}</span>
+
+            <div class="bloque-asientos bloque-izq">
+                @for (butaca of fila.bloqueIzq; track butaca.id) {
+                <button class="butaca-btn" [class.vip]="butaca.tipo === 'VIP'"
+                    [class.accesible]="butaca.tipo === 'Accesible'"
+                    [class.seleccionada]="butacasSeleccionadas().includes(butaca)" (click)="toggleButaca(butaca)">
+                    {{ butaca.numero }}
+                </button>
+                }
+            </div>
+
+            <div class="pasillo"></div>
+
+            <div class="bloque-asientos bloque-centro">
+                @for (butaca of fila.bloqueCentro; track butaca.id) {
+                <button class="butaca-btn" [class.vip]="butaca.tipo === 'VIP'"
+                    [class.accesible]="butaca.tipo === 'Accesible'"
+                    [class.seleccionada]="butacasSeleccionadas().includes(butaca)" (click)="toggleButaca(butaca)">
+                    {{ butaca.numero }}
+                </button>
+                }
+            </div>
+
+            <div class="pasillo"></div>
+
+            <div class="bloque-asientos bloque-der">
+                @for (butaca of fila.bloqueDer; track butaca.id) {
+                <button class="butaca-btn" [class.vip]="butaca.tipo === 'VIP'"
+                    [class.accesible]="butaca.tipo === 'Accesible'"
+                    [class.seleccionada]="butacasSeleccionadas().includes(butaca)" (click)="toggleButaca(butaca)">
+                    {{ butaca.numero }}
+                </button>
+                }
+            </div>
+
+            <span class="letra-fila">{{ fila.letra }}</span>
+        </div>
+        }
+    </div>
+
+    <!-- Panel de resumen dinámico -->
+    @if (butacasSeleccionadas().length > 0) {
+    <div class="resumen-panel">
+        <h3>Resumen de tu selección</h3>
+        <p>
+            <strong>Asientos:</strong>
+            @for (b of butacasSeleccionadas(); track b.id; let isLast = $last) {
+            {{ b.fila }}-{{ b.numero }}{{ isLast ? '' : ', ' }}
+            }
+        </p>
+        <p class="precio-total">Total a pagar: ${{ totalCompra() }}</p>
+
+        <!-- Este routerLink es el que hace la magia de cambiar de pantalla -->
+        <button class="btn-continuar" (click)="irAlCandyBar()">Continuar al Candy Bar</button>
+    </div>
+    }
+</section>

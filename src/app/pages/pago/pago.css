@@ -1,0 +1,58 @@
+.pago-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.ticket-card {
+    background: #fff;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.ticket-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ticket-section {
+    margin-bottom: 15px;
+}
+
+.ticket-section h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.ticket-section ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.ticket-total {
+    border-top: 2px solid #333;
+    padding-top: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-home {
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-home:hover {
+    background-color: #218838;
+}
